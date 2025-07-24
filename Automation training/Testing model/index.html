@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firmware Test Summary</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        h1 { color: #2E86C1; }
+        .pass { color: green; font-weight: bold; }
+        .fail { color: red; font-weight: bold; }
+        table { border-collapse: collapse; width: 80%; margin-top: 20px; }
+        td, th { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        th { background-color: #eee; }
+        a { color: #0077cc; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>Firmware Test Result Summary</h1>
+    <p><strong>Date:</strong> 2025-07-24 16:50:20</p>
+
+    <h2>Overall Result: <span class="fail">FAIL</span></h2>
+
+    <table>
+        <tr>
+            <th>Component</th>
+            <th>Status</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>Firmware Version</td>
+            <td><span class="pass">
+                PASS
+            </span></td>
+            <td><a href="firmware_details.html" target="_blank">View Details</a></td>
+        </tr>
+        <tr>
+            <td>LED Test</td>
+            <td><span class="fail">
+                FAIL
+            </span></td>
+            <td><a href="led_details.html" target="_blank">View Details</a></td>
+        </tr>
+    </table>
+</body>
+</html>

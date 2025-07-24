@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LED Test Details</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        h1 { color: #2E86C1; }
+        .pass { color: green; font-weight: bold; }
+        .fail { color: red; font-weight: bold; }
+        table { border-collapse: collapse; width: 90%; margin-top: 20px; }
+        td, th { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        th { background-color: #eee; }
+        pre { background: #f5f5f5; padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>LED Validation</h1>
+    <ul>
+        <li>Pattern Alternation Valid: <span class="pass">True</span></li>
+        <li>Timing Interval (~5s) Valid: <span class="fail">False</span></li>
+        <li>Total Events Captured: 7</li>
+        <li>Note: First LED event skipped for setup delay.</li>
+    </ul>
+
+    <h2>LED Event Table</h2>
+    <table>
+        <tr><th>#</th><th>State</th><th>Timestamp</th></tr>
+        <tr><td>1</td><td>ON</td><td>16:49:50 (skipped)</td></tr>
+<tr><td>2</td><td>OFF</td><td>16:49:55</td></tr>
+<tr><td>3</td><td>ON</td><td>16:50:00</td></tr>
+<tr><td>4</td><td>OFF</td><td>16:50:05</td></tr>
+<tr><td>5</td><td>ON</td><td>16:50:10</td></tr>
+<tr><td>6</td><td>OFF</td><td>16:50:15</td></tr>
+<tr><td>7</td><td>ON</td><td>16:50:20</td></tr>
+
+    </table>
+
+    <h2>Log Messages</h2>
+    <pre>[16:49:50] Firmware Version: v1.0.0
+[16:49:50] LED ON
+NOTE: First LED ON/OFF skipped due to setup time.
+[16:49:55] LED OFF
+Timing error: ON → OFF = 4.42s (Expected ~5s)
+[16:50:00] LED ON
+Interval OFF → ON: 4.99s OK
+[16:50:05] LED OFF
+Interval ON → OFF: 5.00s OK
+[16:50:10] LED ON
+Interval OFF → ON: 5.01s OK
+[16:50:15] LED OFF
+Interval ON → OFF: 5.00s OK
+[16:50:20] LED ON
+Interval OFF → ON: 4.99s OK</pre>
+</body>
+</html>
